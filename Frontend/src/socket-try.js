@@ -1,6 +1,7 @@
 import openSocket from 'socket.io-client';
-const  socket = openSocket('/');
 
+const  socket = openSocket('http://locahost:5001/');
+//const  socket = openSocket('/');
 
 function subscribeToTimer(cb) {
   socket.on('timer', timestamp => cb(null, timestamp));
