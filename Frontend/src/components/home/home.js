@@ -36,7 +36,7 @@ class Home extends Component {
               </p>
             </h4>
               <p className="flow-text grey-text text-darken-1" >
-                This is the timer value: {this.state.timestamp}
+                Timer value: {this.state.timestamp}
               </p>
             
             <button
