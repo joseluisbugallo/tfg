@@ -7,8 +7,8 @@ const passport = require("passport");
 const users = require("./routes/users")
 
 const app = express();
-
-const io = require("socket.io")();
+const portSocket = 5001;
+const io = require("socket.io")(portSocket);
 
 //Bodyparser middleware
 app.use(
@@ -52,7 +52,7 @@ app.listen(port, () => console.log('Servidor de backend nodejs corriendo en el p
 io.on('connection', (socket) => {
     // here you can start emitting events to the client 
     console.log("New client connected");
-
+    
     socket.on('time', (interval) => {
             console.log('Cliente conectado al servidor con un intervalo de:', interval);
             setInterval(() => {
@@ -60,9 +60,12 @@ io.on('connection', (socket) => {
             }, interval);
         }
     );
+
 });
 
 
-const portSocket = 5001;
-io.listen(portSocket);
+
+// Se puede pasar el puerto en las opciones del require y ya genera solo el servidor implicitamente
+//const portSocket = 5001;
+//io.listen(portSocket);
 console.log('Servidor de Socketio corriendo en el puerto: ', portSocket);

@@ -8,15 +8,21 @@ import { subscribeToTimer } from "../../socket-try";
 
 class Home extends Component {
 
-  constructor(props) {
-    super(props);
+  state = {
+    timestamp: 'no timestamp yet'
+  };
+
+
+  componentDidMount() {
     subscribeToTimer((err, timestamp) => this.setState({
       timestamp
     }));
   }
-  state = {
-    timestamp: 'no timestamp yet'
-  };
+
+  componentWillUnmount() {
+    //dessubscribveToTimer();
+  }
+
 
   onLogoutClick = e => {
     e.preventDefault();
@@ -35,10 +41,10 @@ class Home extends Component {
                 <span style={{ fontFamily: "monospace" }}>TFG</span> WebApp 👏
               </p>
             </h4>
-              <p className="flow-text grey-text text-darken-1" >
-                Timer value: {this.state.timestamp}
-              </p>
-            
+            <p className="flow-text grey-text text-darken-1" >
+              Timer value: {this.state.timestamp}
+            </p>
+
             <button
               style={{
                 width: "150px",
