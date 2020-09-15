@@ -1,5 +1,6 @@
 # TFG
 ## Aplicación web de visionado de videos de forma sincrona con otros usuarios
+Aplicación desplegada en https://mypartyroom.ddns.net/
 
 Este repositorio contiene el proyecto de software desarrollado para el TFG del grado de ingenieria informática de la Universidad de Oviedo por el alumno José Luis Bugallo González. Esta aplicación web consiste en permitir a los usuarios que la usan poder ver videos de forma sincronizada con otros usuarios.
 
