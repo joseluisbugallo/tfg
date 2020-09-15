@@ -17,11 +17,13 @@ class Register extends Component {
   }
 
   componentDidMount() {
-    // If logged in and user navigates to Register page, should redirect them to dashboard
+    
+    // If logged in and user navigates to Register page, should redirect them to home
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/home");
     }
   }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({
@@ -29,6 +31,7 @@ class Register extends Component {
       });
     }
   }
+  
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };

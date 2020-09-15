@@ -7,7 +7,7 @@ module.exports = function validateLoginInput(data) {
     data.password = !isEmpty(data.password) ? data.password : "";
     // Usuario
     if (Validator.isEmpty(data.usuario)) {
-        errors.name = "El usuario es un campo obligatorio";
+        errors.usuario = "El usuario es un campo obligatorio";
     }
     // Password checks
     if (Validator.isEmpty(data.password)) {

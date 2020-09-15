@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 
-import { subscribeToTimer } from "../../socket-try";
+import { subscribeToTimer, desuscribeToTimer } from "../../socket-try";
 
 
 class Home extends Component {
@@ -20,7 +20,7 @@ class Home extends Component {
   }
 
   componentWillUnmount() {
-    //dessubscribveToTimer();
+    desuscribeToTimer();
   }
 
 

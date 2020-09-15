@@ -12,7 +12,7 @@ module.exports = function validateRegisterInput(data) {
 
     // Usuario
     if (Validator.isEmpty(data.usuario)) {
-        errors.name = "El usuario es un campo obligatorio";
+        errors.usuario = "El usuario es un campo obligatorio";
     }
     // Password checks
     if (Validator.isEmpty(data.password)) {

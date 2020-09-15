@@ -9,5 +9,8 @@ function subscribeToTimer(cb) {
   
 }
 
+function desuscribeToTimer(){
+  socket.removeAllListeners();
+}
 
-export { subscribeToTimer };
+export { subscribeToTimer  ,desuscribeToTimer};
