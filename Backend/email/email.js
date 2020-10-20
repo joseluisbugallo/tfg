@@ -6,8 +6,8 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true, // use TLS
     auth: {
-        user: "no-reply@mypartyroom.ddns.net",
-        pass: "53521544s"
+        user: "",
+        pass: ""
     },
     tls: {
         // do not fail on invalid certs
@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport({
 module.exports = function sendEmail(data) {
 
     var mailOptions = {
-        from: '"My Party Room" <no-reply@mypartyroom.ddns.net>',
+        from: '"My Party Room" <>',
         to: data.email,
         subject: 'Recuperar Contraseña',
         text: 'Haz click en el enlace de abajo para recuperar tu contraseña',
