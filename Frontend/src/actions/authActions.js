@@ -7,6 +7,18 @@ import {
     USER_LOADING
 } from "./types";
 
+//Recovery pass
+export const recoveryPassword = (email, history) => dispatch => {
+    axios
+        .post("/api/users/email", email)
+        .then(res => history.push("/login")) // re-direct to login on successful register
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        );
+};
 
 // Register User
 export const registerUser = (userData, history) => dispatch => {

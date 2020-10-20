@@ -5,9 +5,13 @@ const jwt = require("jsonwebtoken");
 
 const config = require("../config/config");
 
+
 //Cargamos la validacion
 const validateRegisterInput = require("../validation/registroValidator");
 const validateLoginInput = require("../validation/loginValidator");
+
+//Cargamos las funciones de email
+const sendEmail = require("../email/email");
 
 //Cargamos el modelo del usuario
 const User = require("../models/User");
@@ -47,6 +51,18 @@ router.post("/register", (req, res) => {
         }
     });
 });
+
+// Ruta de enviar email a usuario
+// @route POST api/users/email
+// @desc Email to user (in future will be use to recovery password)
+// @access Public
+router.post("/email", (req , res ) => {
+    const to = req.body.email;
+    sendEmail(req.body);
+    return res.json({"valido": true});
+
+}
+);
 
 // Ruta de login
 // @route POST api/users/login

@@ -58,6 +58,9 @@ class Login extends Component {
                 <b>Login</b>
               </h4>
               <p className="grey-text text-darken-1">
+                ¿Has olvidado tu contraseña? <Link to="/recoverypassword">Recuperala</Link>
+              </p>
+              <p className="grey-text text-darken-1">
                 ¿No tienes una cuenta? <Link to="/register">Registrate</Link>
               </p>
             </div>

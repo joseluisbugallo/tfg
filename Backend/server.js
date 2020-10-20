@@ -3,12 +3,15 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 
+
+
 //Añadimos las rutas de usuarios
 const users = require("./routes/users")
 
 const app = express();
 const portSocket = 5001;
 const io = require("socket.io")(portSocket);
+
 
 //Bodyparser middleware
 app.use(
@@ -52,13 +55,13 @@ app.listen(port, () => console.log('Servidor de backend nodejs corriendo en el p
 io.on('connection', (socket) => {
     // here you can start emitting events to the client 
     console.log("New client connected");
-    
+
     socket.on('time', (interval) => {
-            console.log('Cliente conectado al servidor con un intervalo de:', interval);
-            setInterval(() => {
-                socket.emit('timer', new Date());
-            }, interval);
-        }
+        console.log('Cliente conectado al servidor con un intervalo de:', interval);
+        setInterval(() => {
+            socket.emit('timer', new Date());
+        }, interval);
+    }
     );
 
 });

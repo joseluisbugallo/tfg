@@ -16,6 +16,8 @@ import Login from "./components/auth/login";
 import PrivateRoute from "./components/private-route/privateRoute";
 import Home from "./components/home/home";
 
+import Recovery from "./components/auth/recoverypassword"
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -47,6 +49,7 @@ class App extends Component {
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/recoverypassword" component={Recovery} />
           <Switch>
               <PrivateRoute exact path="/home" component={Home} />
           </Switch>

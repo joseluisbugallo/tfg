@@ -25,6 +25,8 @@ class Landing extends Component {
                                 Registro
               </Link>
                         </div>
+
+                        
                         <div className="col s6">
                             
                                 <Link
@@ -40,6 +42,22 @@ class Landing extends Component {
               </Link>
                             
                         </div>
+
+                        <div className="col s6">
+                            <Link
+                                to="/recoverypassword"
+                                style={{
+                                    width: "140px",
+                                    borderRadius: "3px",
+                                    letterSpacing: "1.5px"
+                                }}
+                                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                            >
+                                Recuperar contraseña
+              </Link>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
