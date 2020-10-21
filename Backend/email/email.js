@@ -2,12 +2,12 @@
 const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.heladeras.xyz",
-    port: 465,
+    host: process.env.hostSmtp,
+    port: process.env.portSmtp,
     secure: true, // use TLS
     auth: {
-        user: "",
-        pass: ""
+        user: process.env.emailUser,
+        pass: process.env.emailPassword
     },
     tls: {
         // do not fail on invalid certs

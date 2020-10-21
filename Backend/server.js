@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+require('dotenv').config({path: __dirname + '/.env'});
 
 
 
@@ -9,7 +10,7 @@ const passport = require("passport");
 const users = require("./routes/users")
 
 const app = express();
-const portSocket = 5001;
+const portSocket = process.env.PORTSOCKET ;
 const io = require("socket.io")(portSocket);
 
 
